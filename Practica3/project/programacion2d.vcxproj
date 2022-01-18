@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\vec2.cpp" />
+    <ClCompile Include="Font.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\litegfx.h" />
     <ClInclude Include="..\lib\stb_truetype.h" />
     <ClInclude Include="..\src\vec2.h" />
+    <ClInclude Include="Font.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

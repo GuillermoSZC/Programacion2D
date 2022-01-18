@@ -6,7 +6,7 @@
 #include <glfw3.h>
 #include "stb_image.h"
 #include "Vec2.h"
-#include "stb_truetype.h"
+
 
 int main() {
 	double xpos, ypos;
@@ -26,7 +26,7 @@ int main() {
 		printf("error init");
 	}
 	
-	GLFWwindow* window = glfwCreateWindow(width, height, "P2", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(width, height, "P3", nullptr, nullptr);
 	if (!window)
 	{
 		printf("error window");
@@ -35,7 +35,7 @@ int main() {
 	glfwMakeContextCurrent(window);
 	lgfx_setup2d(width, height);
 	// renderizo alpha buffer
-		stbtt_BakeFontBitmap("Orange.ttf", 0, 24, );
+	stbtt_BakeFontBitmap("Orange.ttf", 0, 24, );
 
 	while (!glfwWindowShouldClose(window))
 	{
