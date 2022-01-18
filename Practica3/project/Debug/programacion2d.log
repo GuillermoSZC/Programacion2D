@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\src\main.cpp(43,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\src\main.cpp(14,9): warning C4101: 'xpos': unreferenced local variable
+C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\src\main.cpp(15,9): warning C4101: 'xposMouse': unreferenced local variable
+C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\src\main.cpp(14,15): warning C4101: 'ypos': unreferenced local variable
+C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\src\main.cpp(15,20): warning C4101: 'yposMouse': unreferenced local variable
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\project\Debug\programacion2d.exe
