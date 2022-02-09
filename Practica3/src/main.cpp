@@ -1,59 +1,72 @@
 #define LITE_GFX_IMPLEMENTATION
-#define STB_IMAGE_IMPLEMENTATION
+#define STB_TRUETYPE_IMPLEMENTATION
 
 #include <iostream>
 #include <litegfx.h>
 #include <glfw3.h>
 #include "stb_image.h"
 #include "Vec2.h"
-
+#include<vector>
+#include"Font.h"
 
 int main() {
-	double xpos, ypos;
-	double xposMouse, yposMouse;
-	const int width = 1280;
-	const int height = 960;
-	float delta;
-	float min_dregree = -10.f, max_degree = 10.f, degree_ratio = 10.f;
-	float min_scale = 0.8f, max_scale = 1.2f, scale_ratio = 0.5f;
-	float degree = 0.f, scale = 0.f;
-	vec2 cursorPosition;
+	const int WidthScreen = 1280;
+	const int HeightScreen = 960;
+	double DeltaTime;
+	std::vector<Font> VecFonts;
 
 	glfwInit();
-	
-	if (!glfwInit())
-	{
-		printf("error init");
-	}
-	
-	GLFWwindow* window = glfwCreateWindow(width, height, "P3", nullptr, nullptr);
-	if (!window)
-	{
-		printf("error window");
-	}
-
+	GLFWwindow* window = glfwCreateWindow(WidthScreen, HeightScreen, "P3", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
-	lgfx_setup2d(width, height);
-	// renderizo alpha buffer
-	stbtt_BakeFontBitmap("Orange.ttf", 0, 24, );
+	lgfx_setup2d(WidthScreen, HeightScreen);
 
 	while (!glfwWindowShouldClose(window))
 	{
-		delta = glfwGetTime();
+		DeltaTime = glfwGetTime();
+		lgfx_clearcolorbuffer(0,0,0);
+		lgfx_setblend(BLEND_ALPHA);
+		
+		int SpawnText = rand() % 101;
 
+		if (SpawnText == 0) // if SpawnText == 0 generate the text
+		{
+			int Rand2 = rand() % 2;
+			Font* font = nullptr;
+
+			if (Rand2 == 0)
+			{
+				font = Font::Load("data/SFSlapstickComic.ttf", 60);
+			}
+			else 
+			{
+				font = Font::Load("data/Orange.ttf", 60);
+			}
+			font->SetRGB(rand() % 256, rand() % 256, rand() % 256);
+			font->SetPosition(vec2(0, (float)(rand() % HeightScreen + 1)));
+			font->SetSpeed(20.f + (float)(rand() % 181));
+
+			VecFonts.push_back(*font);
+		}
+
+		for (unsigned int i = 0; i < VecFonts.size(); i++)
+		{
+			lgfx_setcolor(VecFonts[i].GetR()/255, VecFonts[i].GetG()/255, VecFonts[i].GetB()/255, 1);
+			VecFonts[i].draw("Hello, World!", VecFonts[i].GetPosition());
+			VecFonts[i].UpdateXPosition(VecFonts[i].GetSpeed() / 50);
+		} // draw fonts
+
+		for (unsigned int i = 0; i < VecFonts.size(); i++)
+		{
+			if (VecFonts[i].GetPosition().x >= WidthScreen)
+			{
+				VecFonts.erase(VecFonts.begin() + i);
+			} // delete the Font() when his x axis is equals to Width Screen
+		}
+		
 		glfwSwapBuffers(window);
 		glfwPollEvents();
-
-		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		{
-			glfwSetWindowShouldClose(window, true);
-		}
 	}
 	glfwTerminate();
 
   return 0;
 }
-
-
-
-
