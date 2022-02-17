@@ -2,3 +2,4 @@ C:\Users\Soker\Documents\GitHub\Practicas_MASTER\Programacion-2D\Practica3\proje
 C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica3\project\Debug\programacion2d.exe
 C:\Users\Soker\Documents\GitHub\Programacion2D\Practica3\project\Debug\programacion2d.exe
 C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica4\project\Debug\programacion2d.exe
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\project\Debug\programacion2d.exe

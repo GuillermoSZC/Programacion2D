@@ -1,0 +1,25 @@
+﻿  main.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(47,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(50,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(51,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(57,91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(57,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(66,95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(66,71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(14,9): warning C4101: 'xpos': unreferenced local variable
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\src\main.cpp(14,15): warning C4101: 'ypos': unreferenced local variable
+  vec2.cpp
+  Generating Code...
+main.obj : error LNK2019: unresolved external symbol glfwInit referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSetWindowShouldClose referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetCursorPos referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwGetTime referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function main
+main.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function main
+..\lib\glfw3.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica2\project\x64\Debug\programacion2d.exe : fatal error LNK1120: 11 unresolved externals

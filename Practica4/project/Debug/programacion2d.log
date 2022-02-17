@@ -1,7 +1,6 @@
-﻿  Font.cpp
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica4\src\Font.cpp(12,56): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
-  main.cpp
-  vec2.cpp
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica4\project\Debug\programacion2d.exe
+﻿  Sprite.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\src\Sprite.cpp(10,98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\src\Sprite.cpp(10,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\src\Sprite.cpp(10,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\src\Sprite.cpp(10,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica4\project\Debug\programacion2d.exe
