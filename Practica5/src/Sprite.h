@@ -1,6 +1,5 @@
 #pragma once
-
-class Collider;
+#include "Colliders.h"
 
 class Sprite
 {
@@ -14,6 +13,7 @@ private:
     float FPS, frame;
     int speed = 1;
     float displayTimeSeconds;
+    Collider* collider;
 
 public:
     enum CollisionType
@@ -55,7 +55,8 @@ public:
     int GetSpeed() { return speed; }
 
     // SETTERS
-    void SetTexture(const ltex_t* _tex, float _xPosition, float _yPosition);
+    void SetTexture(ltex_t* _tex);
+    void DrawTexture(float _xPosition, float _yPosition);
     void SetAnimTexture(const ltex_t* _Tex);
     void SetBlend(lblend_t _Mode) { mode = _Mode; }
     void SetUserData(void* _Data);

@@ -1,26 +1,21 @@
-﻿  CircleCollider.cpp
-  RectCollider.cpp
+﻿  Colliders.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(104,51): error C2664: 'bool Collider::Collides2(const Vec2 &,Vec2 &) const': cannot convert argument 2 from 'const Vec2' to 'Vec2 &'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(104,43): message : Conversion loses qualifiers
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.h(27,18): message : see declaration of 'Collider::Collides2'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(119,84): error C2664: 'bool Collider::CheckPixelsRect(const Vec2 &,const Vec2 &,const uint8_t *,const Vec2 &,Vec2 &) const': cannot convert argument 5 from 'const Vec2' to 'Vec2 &'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(119,76): message : Conversion loses qualifiers
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(66,16): message : see declaration of 'Collider::CheckPixelsRect'
   main.cpp
 C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(11,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(64,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(65,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(82,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(82,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(83,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(83,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(90,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(90,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(97,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(97,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(98,78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(98,49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(100,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(100,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(101,63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(101,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(106,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(106,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(113,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(113,46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(68,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(69,28): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(143,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(143,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Sprite.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(15,117): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(15,105): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(114,50): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(114,38): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(125,51): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(125,39): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
   Generating Code...
-  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe

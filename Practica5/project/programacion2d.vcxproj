@@ -19,23 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\CircleCollider.cpp" />
     <ClCompile Include="..\src\Colliders.cpp" />
     <ClCompile Include="..\src\Font.cpp" />
     <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\src\PixelsCollider.cpp" />
-    <ClCompile Include="..\src\RectCollider.cpp" />
     <ClCompile Include="..\src\Sprite.cpp" />
     <ClCompile Include="..\src\Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\litegfx.h" />
     <ClInclude Include="..\lib\stb_truetype.h" />
-    <ClInclude Include="..\src\CircleCollider.h" />
     <ClInclude Include="..\src\Colliders.h" />
     <ClInclude Include="..\src\Font.h" />
-    <ClInclude Include="..\src\PixelsCollider.h" />
-    <ClInclude Include="..\src\RectCollider.h" />
     <ClInclude Include="..\src\Sprite.h" />
     <ClInclude Include="..\src\Vec2.h" />
   </ItemGroup>

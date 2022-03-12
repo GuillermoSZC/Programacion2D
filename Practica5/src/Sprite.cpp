@@ -5,11 +5,14 @@
 
 #pragma region Sprite
 
-void Sprite::SetTexture(const ltex_t* _tex, float _xPosition, float _yPosition)
+void Sprite::SetTexture(ltex_t* _tex)
 {
-    ltex_drawrotsized(_tex, _xPosition - _tex->width * 0.5f, _yPosition - _tex->height * 0.5f, 0, 0, 0, _tex->width, _tex->height, 0, 0, 1, 1);
     tex = _tex;
-    // SetPosition(Vec2(_xPosition, _yPosition));
+}
+
+void Sprite::DrawTexture(float _xPosition, float _yPosition)
+{
+    ltex_drawrotsized(tex, _xPosition - tex->width * 0.5f, _yPosition - tex->height * 0.5f, 0, 0, 0, tex->width, tex->height, 0, 0, 1, 1);
 }
 
 void Sprite::SetAnimTexture(const ltex_t* _Tex/*, int _HFrames, int _VFrames*/)
@@ -90,24 +93,52 @@ void Sprite::SetCollisionType(CollisionType _type)
     case COLLISION_NONE:
         break;
     case COLLISION_CIRCLE:
-        
+        if (collider != nullptr)
+        {
+            delete& collider;
+        }
+        collider = new CircleCollider();
+        collider->collisionType = 1;
+        collider->circlePosition = position;
+        collider->radius = tex->width * 0.5f;
+
         break;
     case COLLISION_RECT:
+        if (collider != nullptr)
+        {
+            delete& collider;
+        }
+        collider = new RectCollider();
+        collider->collisionType = 2;
+        collider->rectPosition = position;
+        collider->rectSize = Vec2(tex->width, tex->height);
 
         break;
     case COLLISION_PIXELS:
+        if (collider != nullptr)
+        {
+            delete& collider;
+        }
+        collider = new PixelsCollider();
+        collider->collisionType = 3;
+        collider->pixelPosition = position;
+        collider->pixelSize = Vec2(tex->width, tex->height);
+
+        int iSize = tex->width * tex->height * 4;
+        unsigned char* buffer = new unsigned char[iSize];
+        ltex_getpixels(tex, buffer);
+        collider->pixels = buffer;
 
         break;
-    default:
-        break;
-
     }
 }
 
-
-
 bool Sprite::Collides(const Sprite& _other) const
 {
+    if (collider && _other.collider)
+    {
+        return collider->Collides(*_other.collider); // @CHECK:
+    }
     return false;
 }
 #pragma endregion
