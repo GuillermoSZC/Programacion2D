@@ -5,9 +5,8 @@ bool Collider::CheckCircleCircle(const Vec2& _pos1, float _radius1, const Vec2& 
     float distX = _pos1.x - _pos2.x;
     float distY = _pos1.y - _pos2.y;
     float distance = sqrt((distX * distX) + (distY * distY));
-
     if (distance <= _radius1 + _radius2)
-    {
+    {     
         return true;
     }
     return false;
@@ -60,11 +59,19 @@ bool Collider::CheckRectRect(const Vec2& _rectPos1, const Vec2& _rectSize1, cons
 
 bool Collider::CheckCirclePixels(const Vec2& _circlePos1, float _circleRadius, const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
 {
+    
     return false;
 }
 
-bool Collider::CheckPixelsRect(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels, const Vec2& _rectPos, Vec2& _rectSize) const
+bool Collider::CheckPixelsRect(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels, const Vec2& _rectPos, const Vec2& _rectSize) const
 {
+    if (_rectPos.x + _rectSize.x >= _pixelsPos.x &&
+        _rectPos.x <= _pixelsPos.x + _pixelsSize.x && 
+        _rectPos.y + _rectSize.y >= _pixelsPos.y &&
+        _rectPos.y <= _pixelsPos.y + _pixelsSize.y)   
+    {
+        return true;
+    }
     return false;
 }
 
@@ -75,69 +82,68 @@ bool Collider::CheckPixelsPixels(const Vec2& _pixelsPos1, const Vec2& _pixelsSiz
 
 #pragma endregion
 
-// CIRCLE
+#pragma region CIRCLE_COLLIDER
 
 bool CircleCollider::Collides(const Collider& _other) const
 {
-    return _other.Collides1(circlePosition, radius);
+    return _other.Collides(circlePosition, radius);
 }
 
-bool CircleCollider::Collides1(const Vec2& _circlePos, float _circleRadius) const
+bool CircleCollider::Collides(const Vec2& _circlePos, float _circleRadius) const
 {
     return CheckCircleCircle(circlePosition, radius, _circlePos, _circleRadius);
 }
 
-bool CircleCollider::Collides2(const Vec2& _rectPos, Vec2& _rectSize) const
+bool CircleCollider::Collides(const Vec2& _rectPos, const Vec2& _rectSize) const
 {
     return CheckCircleRect(circlePosition, radius, _rectPos, _rectSize);
 }
 
-bool CircleCollider::Collides3(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
+bool CircleCollider::Collides(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
 {
     return CheckCirclePixels(circlePosition, radius, _pixelsPos, _pixelsSize, _pixels);
 }
-
-// RECT
-
+#pragma endregion
+#pragma region RECT_COLLIDER
 bool RectCollider::Collides(const Collider& _other) const
 {
-    return _other.Collides2(rectPosition, rectSize);
+    return _other.Collides(rectPosition, rectSize);
 }
 
-bool RectCollider::Collides2(const Vec2& _rectPos, Vec2& _rectSize) const
-{
-    return CheckRectRect(rectPosition, rectSize, _rectPos, _rectSize);
-}
-
-bool RectCollider::Collides1(const Vec2& _circlePos, float _circleRadius) const
+bool RectCollider::Collides(const Vec2& _circlePos, float _circleRadius) const
 {
     return CheckCircleRect(_circlePos, _circleRadius, rectPosition, rectSize);
 }
 
-bool RectCollider::Collides3(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
+bool RectCollider::Collides(const Vec2& _rectPos, const Vec2& _rectSize) const
+{
+    return CheckRectRect(rectPosition, rectSize, _rectPos, _rectSize);
+}
+
+bool RectCollider::Collides(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
 {
     return CheckPixelsRect(_pixelsPos, _pixelsSize, _pixels, rectPosition, rectSize);
 }
-
-// PIXELS
+#pragma endregion
+#pragma region PIXEL_COLLIDER
 
 bool PixelsCollider::Collides(const Collider& _other) const
 {
-    return _other.Collides3(pixelPosition, pixelSize, pixels);
+    return _other.Collides(pixelPosition, pixelSize, pixels);
 }
 
-bool PixelsCollider::Collides1(const Vec2& _circlePos, float _circleRadius) const
+bool PixelsCollider::Collides(const Vec2& _circlePos, float _circleRadius) const
 {
     return CheckCirclePixels(_circlePos, _circleRadius, pixelPosition, pixelSize, pixels);
 }
 
-bool PixelsCollider::Collides2(const Vec2& _rectPos, Vec2& _rectSize) const
+bool PixelsCollider::Collides(const Vec2& _rectPos, const Vec2& _rectSize) const
 {
     return CheckPixelsRect(pixelPosition, pixelSize, pixels, _rectPos, _rectSize);
 }
 
-bool PixelsCollider::Collides3(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
+bool PixelsCollider::Collides(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
 {
     return CheckPixelsPixels(pixelPosition, pixelSize, pixels, _pixelsPos, _pixelsSize, _pixels);
 }
-
+#pragma endregion

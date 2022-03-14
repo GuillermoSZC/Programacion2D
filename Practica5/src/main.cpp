@@ -22,8 +22,9 @@ int main() {
     const int HeightScreen = 960;
     double MouseX, MouseY;
     double DeltaTime = 0, LastTime = 0, UpdateTime = glfwGetTime();
-    bool collides, val;
+    bool collides, val(false);
     Vec2 CursorPosition;
+    int collisionType = 1;
 
     Sprite* boxSprite = new Sprite();
     Sprite* beeSprite = new Sprite();
@@ -54,7 +55,7 @@ int main() {
     ballSprite->SetCollisionType(Sprite::COLLISION_CIRCLE);
 
     cursorSprite->SetTexture(circle); // @TODO: Meter un puntero por defecto
-    cursorSprite->SetCollisionType(Sprite::COLLISION_NONE);
+    cursorSprite->SetCollisionType(Sprite::COLLISION_CIRCLE);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -65,33 +66,32 @@ int main() {
         DeltaTime = UpdateTime - LastTime;
 
         glfwGetCursorPos(window, &MouseX, &MouseY);
-        CursorPosition.x = MouseX;
-        CursorPosition.y = MouseY;
-
         
 
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT)) // CIRCLE
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
             cursorSprite->SetTexture(circle);
+            collisionType = 1;
             cursorSprite->SetCollisionType(Sprite::COLLISION_CIRCLE);
-
-
         }
         else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT)) // RECT
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
             cursorSprite->SetTexture(rect);
+            collisionType = 2;
             cursorSprite->SetCollisionType(Sprite::COLLISION_RECT);
-
 
         }
         else if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_MIDDLE)) // BEE
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
             cursorSprite->SetTexture(bee);
+            collisionType = 3;
             cursorSprite->SetCollisionType(Sprite::COLLISION_PIXELS);
         }
+
+        cursorSprite->UpdatePosition(collisionType);
 
         lgfx_setblend(BLEND_ALPHA);
 
@@ -103,12 +103,12 @@ int main() {
         }
         else
         {
-            lgfx_setcolor(0, 0, 0, 1);
+            lgfx_setcolor(1, 1, 1, 1);
         }
-        boxSprite->DrawTexture(WidthScreen * 0.75f, HeightScreen * 0.5f);
+        boxSprite->DrawAnimTexture(WidthScreen * 0.75f, HeightScreen * 0.5f);
 
 
-        collides = cursorSprite->Collides(*beeSprite);
+       collides = cursorSprite->Collides(*beeSprite);
         if (collides)
         {
             val = true;
@@ -116,7 +116,7 @@ int main() {
         }
         else
         {
-            lgfx_setcolor(0, 0, 0, 1);
+            lgfx_setcolor(1, 1, 1, 1);
         }
         beeSprite->DrawTexture(WidthScreen * 0.5f, HeightScreen * 0.5f);
 
@@ -128,17 +128,17 @@ int main() {
         }
         else
         {
-            lgfx_setcolor(0, 0, 0, 1);
+            lgfx_setcolor(1, 1, 1, 1);
         }
         ballSprite->DrawTexture(WidthScreen * 0.25f, HeightScreen * 0.5f);
-
+        
         if (val)
         {
             lgfx_setcolor(1, 0, 0, 1);
         }
         else
         {
-            lgfx_setcolor(0, 0, 0, 1);
+            lgfx_setcolor(1, 1, 1, 1);
         }
         cursorSprite->DrawTexture(MouseX, MouseY);
         val = false;

@@ -12,13 +12,13 @@ void Sprite::SetTexture(ltex_t* _tex)
 
 void Sprite::DrawTexture(float _xPosition, float _yPosition)
 {
+    SetPosition(Vec2(_xPosition, _yPosition));
     ltex_drawrotsized(tex, _xPosition - tex->width * 0.5f, _yPosition - tex->height * 0.5f, 0, 0, 0, tex->width, tex->height, 0, 0, 1, 1);
 }
 
-void Sprite::SetAnimTexture(const ltex_t* _Tex/*, int _HFrames, int _VFrames*/)
-{
-    ltex_drawrotsized(_Tex, position.x, position.y, angle, 0, 0,
-        _Tex->width / 8.f * 2.f, _Tex->height * 2.f, 0.125f * GetCurrentFrame(), 0.f, 0.125f * GetCurrentFrame() + 0.125f, 1.f);
+void Sprite::DrawAnimTexture(float _xPosition, float _yPosition)
+{  
+    ltex_drawrotsized(tex, _xPosition - tex->width * 0.5f, _yPosition - tex->height * 0.5f, 0, 0, 0, tex->width, tex->height, 0, 0, 1, 1);
 }
 
 void Sprite::SetColor(float _R, float _G, float _B, float _A)
@@ -28,7 +28,6 @@ void Sprite::SetColor(float _R, float _G, float _B, float _A)
     b = _B;
     a = _A;
 }
-
 
 void Sprite::Update(float _DeltaTime)
 {
@@ -90,45 +89,59 @@ void Sprite::SetCollisionType(CollisionType _type)
 {
     switch (_type)
     {
-    case COLLISION_NONE:
-        break;
     case COLLISION_CIRCLE:
         if (collider != nullptr)
         {
-            delete& collider;
+            delete collider;
+            collider = nullptr;
         }
         collider = new CircleCollider();
         collider->collisionType = 1;
         collider->circlePosition = position;
         collider->radius = tex->width * 0.5f;
-
         break;
     case COLLISION_RECT:
         if (collider != nullptr)
         {
-            delete& collider;
+            delete collider;
+            collider = nullptr;
         }
         collider = new RectCollider();
         collider->collisionType = 2;
         collider->rectPosition = position;
         collider->rectSize = Vec2(tex->width, tex->height);
-
         break;
     case COLLISION_PIXELS:
         if (collider != nullptr)
         {
-            delete& collider;
+            delete collider;
+            collider = nullptr;
         }
         collider = new PixelsCollider();
+        iSize = tex->width * tex->height * 4;
+        buffer = new unsigned char[iSize];
+        ltex_getpixels(tex, buffer);
         collider->collisionType = 3;
         collider->pixelPosition = position;
         collider->pixelSize = Vec2(tex->width, tex->height);
-
-        int iSize = tex->width * tex->height * 4;
-        unsigned char* buffer = new unsigned char[iSize];
-        ltex_getpixels(tex, buffer);
         collider->pixels = buffer;
+        break;
+    }
+}
 
+
+void Sprite::UpdatePosition(int _num)
+{
+    switch (_num)
+    {
+    case 1:
+        collider->circlePosition = position;
+        break;
+    case 2:
+        collider->rectPosition = Vec2(position.x - tex->width * 0.5f, position.y - tex->height * 0.5f);
+        break;
+    case 3:
+        collider->pixelPosition = Vec2(position.x - tex->width * 0.5f, position.y - tex->height * 0.5f);
         break;
     }
 }
@@ -137,7 +150,7 @@ bool Sprite::Collides(const Sprite& _other) const
 {
     if (collider && _other.collider)
     {
-        return collider->Collides(*_other.collider); // @CHECK:
+        return _other.collider->Collides(*collider); // @CHECK:
     }
     return false;
 }

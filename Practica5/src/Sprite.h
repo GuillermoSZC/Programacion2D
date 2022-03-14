@@ -14,6 +14,9 @@ private:
     int speed = 1;
     float displayTimeSeconds;
     Collider* collider;
+    unsigned char* buffer;
+    int iSize;
+    Vec2 animSize = Vec2(1, 1);
 
 public:
     enum CollisionType
@@ -57,7 +60,7 @@ public:
     // SETTERS
     void SetTexture(ltex_t* _tex);
     void DrawTexture(float _xPosition, float _yPosition);
-    void SetAnimTexture(const ltex_t* _Tex);
+    void DrawAnimTexture(float _xPosition, float _yPosition);
     void SetBlend(lblend_t _Mode) { mode = _Mode; }
     void SetUserData(void* _Data);
     void SetColor(float _R, float _G, float _B, float _A);
@@ -74,6 +77,7 @@ public:
 #pragma endregion
     void SetCollisionType(CollisionType _type);
     CollisionType GetCollisionType() const;
+    void UpdatePosition(int _num);
     const Collider* GetCollider() const;
     bool Collides(const Sprite& _other) const;
 
@@ -82,5 +86,5 @@ public:
     void Draw() const;
     void SetCallback(CallbackFunc func);
 
-    
+
 };
