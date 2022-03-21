@@ -48,6 +48,7 @@ int main() {
     boxSprite->SetCollisionType(Sprite::COLLISION_RECT);
 
     beeSprite->SetTexture(bee);
+    beeSprite->SetPosition(Vec2(WidthScreen * 0.5f - bee->width * 0.5f, HeightScreen * 0.5f - bee->height * 0.5f));
     beeSprite->SetCollisionType(Sprite::COLLISION_PIXELS);
 
     ballSprite->SetTexture(ball);

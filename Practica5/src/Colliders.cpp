@@ -65,18 +65,37 @@ bool Collider::CheckCirclePixels(const Vec2& _circlePos1, float _circleRadius, c
 
 bool Collider::CheckPixelsRect(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels, const Vec2& _rectPos, const Vec2& _rectSize) const
 {
-    if (_rectPos.x + _rectSize.x >= _pixelsPos.x &&
-        _rectPos.x <= _pixelsPos.x + _pixelsSize.x && 
-        _rectPos.y + _rectSize.y >= _pixelsPos.y &&
-        _rectPos.y <= _pixelsPos.y + _pixelsSize.y)   
+    if (_rectPos.x + _rectSize.x >= _pixelsPos.x && // rect1 right edge past rect2 left
+        _rectPos.x <= _pixelsPos.x + _pixelsSize.x && // rect1 left edge past rect2 right
+        _rectPos.y + _rectSize.y >= _pixelsPos.y && // rect1 top edge past rect2 bottom
+        _rectPos.y <= _pixelsPos.y + _pixelsSize.y)   // rect1 bottom edge past rect2 top
     {
         return true;
     }
+    
     return false;
 }
 
 bool Collider::CheckPixelsPixels(const Vec2& _pixelsPos1, const Vec2& _pixelsSize1, const uint8_t* _pixels1, const Vec2& _pixelsPos2, const Vec2& _pixelsSize2, const uint8_t* _pixels2) const
 {
+    int index = 0;
+    int x = 0;
+    int y = 0;
+
+    for (int i = 0; i < _pixelsSize1.x; ++i)
+    {
+        for (int j = 0; j < _pixelsSize1.y; ++j)
+        {
+            x = j + _pixelsPos1.x;
+            y = i + _pixelsPos1.y;
+            index = (y + _pixelsSize1.x + x) * 4 + 3;
+            printf("%d", _pixels1[index]);
+        }
+    }
+    if (_pixelsPos1.x - _pixelsPos2.x >= 0 && _pixelsPos1.y - _pixelsPos2.y >= 0)
+    {
+        return true;
+    }
     return false;
 }
 

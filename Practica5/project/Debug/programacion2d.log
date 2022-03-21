@@ -1,10 +1,1 @@
-﻿  Sprite.cpp
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(16,117): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(16,105): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(22,117): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(22,105): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(113,50): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(113,38): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(127,51): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(127,39): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe
+﻿  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe
