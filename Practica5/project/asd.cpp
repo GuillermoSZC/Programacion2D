@@ -1,36 +1,7 @@
+
+
+
 /*
-
-
-bool Collider::checkCircleCircle(const Vec2& pos1, float radius1, const Vec2& pos2, float radius2) const
-{
-    // return (Distancia entre centros < Suma de los radios)
-    Vec2 oVecBetweenCircles = pos2;
-    oVecBetweenCircles = oVecBetweenCircles - pos1;
-    return (oVecBetweenCircles.length() < (radius1 + radius2));
-}
-
-bool Collider::checkCircleRect(const Vec2& circlePos, float circleRadius, const Vec2& rectPos, const Vec2& rectSize) const
-{
-    // Obtenemos el punto del rectangulo mas cercano al circulo
-    float fClosestX = std::clamp(circlePos.GetX(), rectPos.GetX(), rectPos.GetX() + rectSize.GetX());
-    float fClosestY = std::clamp(circlePos.GetY(), rectPos.GetY(), rectPos.GetY() + rectSize.GetY());
-    // return (Distancia circulo->punto mas cercano de rectangulo < radio de circulo)
-    Vec2 oVecBetweenColliders = Vec2(fClosestX, fClosestY) - circlePos;
-    return (oVecBetweenColliders.length() < circleRadius);
-}
-
-bool Collider::checkRectRect(const Vec2& rectPos1, const Vec2& rectSize1, const Vec2& rectPos2, const Vec2& rectSize2) const
-{
-    // Chequeamos si las coordenadas x e y estan fuera del rango del otro rectangulo
-    if (rectPos2.GetX() > rectPos1.GetX() + rectSize1.GetX() ||
-        rectPos1.GetX() > rectPos2.GetX() + rectSize2.GetX() ||
-        rectPos2.GetY() > rectPos1.GetY() + rectSize1.GetY() ||
-        rectPos1.GetY() > rectPos2.GetY() + rectSize2.GetY())
-    {
-        return false;
-    }
-    return true;
-}
 
 bool Collider::checkCirclePixels(const Vec2& circlePos, float circleRadius, const Vec2& pixelsPos, const Vec2& pixelsSize, const uint8_t* pixels) const
 {

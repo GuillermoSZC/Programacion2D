@@ -87,45 +87,32 @@ void Sprite::SetAngle(float _Angle)
 
 void Sprite::SetCollisionType(CollisionType _type)
 {
-    switch (_type)
+    if (collider)
     {
-    case COLLISION_CIRCLE:
-        if (collider != nullptr)
-        {
-            delete collider;
-            collider = nullptr;
-        }
+        delete collider;
+        collider = nullptr;
+    }
+    if (_type == Sprite::COLLISION_CIRCLE)
+    {
         collider = new CircleCollider();
-        collider->collisionType = 1;
         collider->circlePosition = position;
         collider->radius = tex->width * 0.5f;
-        break;
-    case COLLISION_RECT:
-        if (collider != nullptr)
-        {
-            delete collider;
-            collider = nullptr;
-        }
+    }
+    else if (_type == Sprite::COLLISION_RECT)
+    {
         collider = new RectCollider();
-        collider->collisionType = 2;
         collider->rectPosition = position;
         collider->rectSize = Vec2(tex->width, tex->height);
-        break;
-    case COLLISION_PIXELS:
-        if (collider != nullptr)
-        {
-            delete collider;
-            collider = nullptr;
-        }
+    }
+    else if (_type == Sprite::COLLISION_PIXELS)
+    {
         collider = new PixelsCollider();
-        iSize = tex->width * tex->height * 4;
-        buffer = new unsigned char[iSize];
+        iSize = tex->width * tex->height;
+        buffer = new unsigned char[tex->width * tex->height * 4];
         ltex_getpixels(tex, buffer);
-        collider->collisionType = 3;
         collider->pixelPosition = position;
         collider->pixelSize = Vec2(tex->width, tex->height);
         collider->pixels = buffer;
-        break;
     }
 }
 

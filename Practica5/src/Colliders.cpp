@@ -6,7 +6,7 @@ bool Collider::CheckCircleCircle(const Vec2& _pos1, float _radius1, const Vec2& 
     float distY = _pos1.y - _pos2.y;
     float distance = sqrt((distX * distX) + (distY * distY));
     if (distance <= _radius1 + _radius2)
-    {     
+    {
         return true;
     }
     return false;
@@ -59,43 +59,99 @@ bool Collider::CheckRectRect(const Vec2& _rectPos1, const Vec2& _rectSize1, cons
 
 bool Collider::CheckCirclePixels(const Vec2& _circlePos1, float _circleRadius, const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels) const
 {
-    
+
+    int pixelPosX = 0;
+    int pixelPosY = 0;
+    int index = 0;
+    Vec2 distance = Vec2(0.f, 0.f);
+    Vec2 circleSize = Vec2(_circlePos1.x - _circleRadius, _circlePos1.y - _circleRadius);
+    float xPosition = (_pixelsPos.x < circleSize.x) ? circleSize.x : _pixelsPos.x;
+    float width = std::fminf(_pixelsPos.x + _pixelsSize.x, circleSize.x + circleSize.x) - xPosition;
+    float yPosition = (_pixelsPos.y < circleSize.y) ? circleSize.y : _pixelsPos.y;
+    float height = std::fminf(_pixelsPos.y + _pixelsSize.y, circleSize.y + circleSize.y) - yPosition;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            distance = Vec2(j + xPosition, i - yPosition) - _circlePos1;
+            if (distance.vAbsoluto(distance) < _circleRadius) // @TODO:
+            {
+                pixelPosX = j + xPosition - _pixelsPos.x;
+                pixelPosY = i + yPosition - _pixelsPos.y;
+                index = (pixelPosY * _pixelsSize.x + pixelPosX) * 4 + 3;
+                if (_pixels[index] != 0)
+                {
+                    return true;
+                }
+            }
+        }
+    }
+
     return false;
 }
 
 bool Collider::CheckPixelsRect(const Vec2& _pixelsPos, const Vec2& _pixelsSize, const uint8_t* _pixels, const Vec2& _rectPos, const Vec2& _rectSize) const
 {
-    if (_rectPos.x + _rectSize.x >= _pixelsPos.x && // rect1 right edge past rect2 left
-        _rectPos.x <= _pixelsPos.x + _pixelsSize.x && // rect1 left edge past rect2 right
-        _rectPos.y + _rectSize.y >= _pixelsPos.y && // rect1 top edge past rect2 bottom
-        _rectPos.y <= _pixelsPos.y + _pixelsSize.y)   // rect1 bottom edge past rect2 top
+    if (!CheckRectRect(_pixelsPos, _pixelsSize, _rectPos, _rectSize))
     {
-        return true;
+        return false;
     }
-    
+    int pixelPosX = 0;
+    int pixelPosY = 0;
+    int index = 0;
+    float xPosition = (_pixelsPos.x < _rectPos.x) ? _rectPos.x : _pixelsPos.x;
+    float width = std::fminf(_pixelsPos.x + _pixelsSize.x, _rectPos.x + _rectSize.x) - xPosition;
+    float yPosition = (_pixelsPos.y < _rectPos.y) ? _rectPos.y : _pixelsPos.y;
+    float height = std::fminf(_pixelsPos.y + _pixelsSize.y, _rectPos.y + _rectSize.y) - yPosition;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            pixelPosX = j + xPosition - _pixelsPos.x;
+            pixelPosY = i + yPosition - _pixelsPos.y;
+            index = (pixelPosY * _pixelsSize.x + pixelPosX) * 4 + 3;
+            if (_pixels[index] != 0)
+            {
+                return true;
+            }
+        }
+    }
     return false;
 }
 
 bool Collider::CheckPixelsPixels(const Vec2& _pixelsPos1, const Vec2& _pixelsSize1, const uint8_t* _pixels1, const Vec2& _pixelsPos2, const Vec2& _pixelsSize2, const uint8_t* _pixels2) const
 {
-    int index = 0;
-    int x = 0;
-    int y = 0;
-
-    for (int i = 0; i < _pixelsSize1.x; ++i)
+    if (!CheckRectRect(_pixelsPos1, _pixelsSize1, _pixelsPos2, _pixelsSize2))
     {
-        for (int j = 0; j < _pixelsSize1.y; ++j)
+        return false;
+    }
+    int pixelPosX1 = 0, pixelPosX2 = 0;
+    int pixelPosY1 = 0, pixelPosY2 = 0;
+    int index1 = 0, index2 = 0;
+    float xPosition = (_pixelsPos1.x < _pixelsPos2.x) ? _pixelsPos2.x : _pixelsPos1.x;
+    float width = std::fminf(_pixelsPos1.x + _pixelsSize1.x, _pixelsPos2.x + _pixelsSize2.x) - xPosition;
+    float yPosition = (_pixelsPos1.y < _pixelsPos2.y) ? _pixelsPos2.y : _pixelsPos1.y;
+    float height = std::fminf(_pixelsPos1.y + _pixelsSize1.y, _pixelsPos2.y + _pixelsSize2.y) - yPosition;
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
         {
-            x = j + _pixelsPos1.x;
-            y = i + _pixelsPos1.y;
-            index = (y + _pixelsSize1.x + x) * 4 + 3;
-            printf("%d", _pixels1[index]);
+            pixelPosX1 = j + xPosition - _pixelsPos1.x;
+            pixelPosY1 = i + yPosition - _pixelsPos1.y;
+            index1 = (pixelPosY1 * _pixelsSize1.x + pixelPosX1) * 4 + 3;
+            pixelPosX2 = j + xPosition - _pixelsPos2.x;
+            pixelPosY2 = i + yPosition - _pixelsPos2.y;
+            index2 = (pixelPosY2 * _pixelsSize2.x + pixelPosX2) * 4 + 3;
+            if (_pixels1[index1] != 0 && _pixels2[index2])
+            {
+                return true;
+            }
         }
     }
-    if (_pixelsPos1.x - _pixelsPos2.x >= 0 && _pixelsPos1.y - _pixelsPos2.y >= 0)
-    {
-        return true;
-    }
+
     return false;
 }
 

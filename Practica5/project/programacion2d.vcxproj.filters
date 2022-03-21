@@ -33,6 +33,9 @@
     <ClCompile Include="asd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="dsf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\litegfx.h">

@@ -1,1 +1,14 @@
-﻿  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe
+﻿  Colliders.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(80,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(81,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(82,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(112,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(113,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(114,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(142,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(143,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(144,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(145,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(146,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(147,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe

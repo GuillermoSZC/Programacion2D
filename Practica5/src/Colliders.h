@@ -9,7 +9,6 @@ public:
     Vec2 circlePosition;
     Vec2 rectPosition;
     Vec2 pixelPosition;
-    int collisionType;
     float radius;
     Vec2 rectSize;
     Vec2 pixelSize;

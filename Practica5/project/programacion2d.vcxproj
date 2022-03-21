@@ -25,6 +25,7 @@
     <ClCompile Include="..\src\Sprite.cpp" />
     <ClCompile Include="..\src\Vec2.cpp" />
     <ClCompile Include="asd.cpp" />
+    <ClCompile Include="dsf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\litegfx.h" />
