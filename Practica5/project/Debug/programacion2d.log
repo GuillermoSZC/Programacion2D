@@ -1,14 +1,13 @@
-﻿  Colliders.cpp
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(80,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(81,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(82,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(112,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(113,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(114,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(142,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(143,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(144,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(145,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(146,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\src\Colliders.cpp(147,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe
+﻿  Sprite.cpp
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(16,117): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(16,105): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(100,50): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(100,38): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(109,51): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\Sprite.cpp(109,39): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  main.cpp
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(11,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(142,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\src\main.cpp(142,35): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica5\project\Debug\programacion2d.exe

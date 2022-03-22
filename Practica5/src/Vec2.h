@@ -22,7 +22,7 @@ public:
 	float vAbsoluto(const Vec2&) const;
 	Vec2 normal(const Vec2&);
 	float pEscalar(const Vec2&, const Vec2&);
-
+	float Length() const;
 	float angle(const Vec2& other) const;
 	float distance(const Vec2& other) const;
 

@@ -60,14 +60,12 @@ public:
     // SETTERS
     void SetTexture(ltex_t* _tex);
     void DrawTexture(float _xPosition, float _yPosition);
-    void DrawAnimTexture(float _xPosition, float _yPosition);
     void SetBlend(lblend_t _Mode) { mode = _Mode; }
     void SetUserData(void* _Data);
     void SetColor(float _R, float _G, float _B, float _A);
     void SetPosition(const Vec2& _Position);
     void SetAnimPosition(const Vec2& _Position);
     void SetAngle(float _Angle);
-    void SetScale(const Vec2& _Scale) { scale = _Scale; }
     void SetPivot(const Vec2& _Pivot) { pivot = _Pivot; }
     void SetFPS(float _FPS);
     void SetCurrentFrame(float _Frame);
@@ -80,6 +78,7 @@ public:
     void UpdatePosition(int _num);
     const Collider* GetCollider() const;
     bool Collides(const Sprite& _other) const;
+    void SetScale(float _scale);
 
     // FUNCTIONS 
     void Update(float _DeltaTime);

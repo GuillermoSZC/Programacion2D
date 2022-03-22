@@ -45,10 +45,16 @@ Vec2 Vec2::operator/(const Vec2& a)
 	return div;
 }
 
+float Vec2::Length() const
+{
+	return sqrtf(x * x + y * y);
+}
+
 float Vec2::vAbsoluto(const Vec2 &_vector) const
 {
 	return sqrtf(_vector.v[0] * _vector.v[0] + _vector.v[1] * _vector.v[1]);
 }
+
 
 Vec2 Vec2::normal(const Vec2& _vector)
 {

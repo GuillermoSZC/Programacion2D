@@ -16,11 +16,6 @@ void Sprite::DrawTexture(float _xPosition, float _yPosition)
     ltex_drawrotsized(tex, _xPosition - tex->width * 0.5f, _yPosition - tex->height * 0.5f, 0, 0, 0, tex->width, tex->height, 0, 0, 1, 1);
 }
 
-void Sprite::DrawAnimTexture(float _xPosition, float _yPosition)
-{  
-    ltex_drawrotsized(tex, _xPosition - tex->width * 0.5f, _yPosition - tex->height * 0.5f, 0, 0, 0, tex->width, tex->height, 0, 0, 1, 1);
-}
-
 void Sprite::SetColor(float _R, float _G, float _B, float _A)
 {
     r = _R;
@@ -137,8 +132,10 @@ bool Sprite::Collides(const Sprite& _other) const
 {
     if (collider && _other.collider)
     {
-        return _other.collider->Collides(*collider); // @CHECK:
+        return _other.collider->Collides(*collider);
     }
     return false;
 }
+
+
 #pragma endregion
