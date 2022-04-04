@@ -84,6 +84,7 @@ public:
     void Update(float _DeltaTime);
     void Draw() const;
     void SetCallback(CallbackFunc func);
+    ltex_t* LoadTexture(const char* _filename);
 
 
 };

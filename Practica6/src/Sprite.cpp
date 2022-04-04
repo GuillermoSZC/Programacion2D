@@ -2,12 +2,27 @@
 #include "litegfx.h"
 #include "Vec2.h"
 #include "Sprite.h"
+#include "stb_image.h"
 
 #pragma region Sprite
 
 void Sprite::SetTexture(ltex_t* _tex)
 {
     tex = _tex;
+}
+
+ltex_t* Sprite::LoadTexture(const char* _filename)
+{
+    int* x = new int;
+    int* y = new int;
+
+    unsigned char* buffer = stbi_load(_filename, x, y, nullptr, 4);
+    ltex_t* tex_ = ltex_alloc(*x, *y, 1);
+
+    ltex_setpixels(tex_, buffer);
+    stbi_image_free(buffer);
+
+    return tex_;
 }
 
 void Sprite::DrawTexture(float _xPosition, float _yPosition)
