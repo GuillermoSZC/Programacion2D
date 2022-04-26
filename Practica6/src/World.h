@@ -1,31 +1,39 @@
 #pragma once
 #include "litegfx.h"
+#include <list>
 #include "Sprite.h"
 #include "Vec2.h"
+
+
 
 class World
 {
 public:
-    World();
-    ~World();
+    World() = default;
+    World(float _clearRed, float _clearGreen, float _clearBlue,
+          const ltex_t* _background0, const ltex_t* _background1,
+          const ltex_t* _background2, const ltex_t* _background3);
+
+    ~World() { printf("Object World deleted.\n"); }
 
 public:
-
-
+   
 protected:
-
+    struct Background
+    {
+        const ltex_t* texture;
+        float scrollRatio;
+        Vec2 scrollSpeed;
+        Vec2 scroll;
+        Vec2 scrollOffset;
+    } background[4];
 
 private:
     float clearRed;
     float clearGreen;
     float clearBlue;
-    const ltex_t* back0;
-    const ltex_t* back1;
-    const ltex_t* back2;
-    const ltex_t* back3;
-    Vec2 scrollSpeed;
     Vec2 cameraPosition;
-    float scrollRatio;
+    std::list<Sprite*> spritesList;
 
 public:
     void Update(float _deltaTime);

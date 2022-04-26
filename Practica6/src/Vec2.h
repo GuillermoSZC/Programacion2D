@@ -19,11 +19,11 @@ public:
 	Vec2 operator-(const Vec2&);
 	Vec2 operator*(const Vec2&);
 	Vec2 operator/(const Vec2&);
-	float vAbsoluto(const Vec2&) const;
-	Vec2 normal(const Vec2&);
-	float pEscalar(const Vec2&, const Vec2&);
+	float AbsoluteVal(const Vec2&) const;
+	Vec2 Normal(const Vec2&);
+	float EscalarProduct(const Vec2&, const Vec2&);
 	float Length() const;
-	float angle(const Vec2& other) const;
-	float distance(const Vec2& other) const;
+	float Angle(const Vec2& other) const;
+	float Distance(const Vec2& other) const;
 
 };

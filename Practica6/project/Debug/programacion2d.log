@@ -1,2 +1,36 @@
-﻿  World.cpp
-  programacion2d.vcxproj -> C:\Users\guillermo.suarez\Documents\GitHub\Programacion2D\Practica6\project\Debug\programacion2d.exe
+﻿  Colliders.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(96,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(97,43): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(98,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(140,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(141,39): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(142,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(183,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(184,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(185,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(186,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(187,40): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Colliders.cpp(188,69): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Font.cpp
+  Sprite.cpp
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(15,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(16,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(24,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(25,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(70,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(71,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(162,50): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(162,38): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(171,51): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\Sprite.cpp(171,39): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  Vec2.cpp
+  World.cpp
+  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\lib\glfw3.h(98): message : see previous definition of 'APIENTRY'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\main.cpp(83,77): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\main.cpp(83,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\src\World.cpp(102): warning C4172: returning address of local variable or temporary
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica6\project\Debug\programacion2d.exe

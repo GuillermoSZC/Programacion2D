@@ -1,7 +1,7 @@
 #include "Vec2.h"
-#include <math.h>
+#include <cmath>
 
-Vec2::Vec2() {}
+Vec2::Vec2() = default;
 
 Vec2::Vec2(float x, float y)
 {
@@ -50,19 +50,19 @@ float Vec2::Length() const
 	return sqrtf(x * x + y * y);
 }
 
-float Vec2::vAbsoluto(const Vec2 &_vector) const
+float Vec2::AbsoluteVal(const Vec2 &_vector) const
 {
 	return sqrtf(_vector.v[0] * _vector.v[0] + _vector.v[1] * _vector.v[1]);
 }
 
 
-Vec2 Vec2::normal(const Vec2& _vector)
+Vec2 Vec2::Normal(const Vec2& _vector)
 {
 	Vec2 vector_;
-	float nm = vAbsoluto(_vector);
+	float nm = AbsoluteVal(_vector);
 	if (nm == 0.f)
 	{
-		return Vec2(0.f, 0.f);
+		return {0.f, 0.f};
 	}
 	vector_.v[0] = _vector.v[0] / nm;
 	vector_.v[1] = _vector.v[1] / nm;
@@ -70,14 +70,12 @@ Vec2 Vec2::normal(const Vec2& _vector)
 	return vector_;
 }
 
-float Vec2::pEscalar(const Vec2& a, const Vec2& b)
+float Vec2::EscalarProduct(const Vec2& a, const Vec2& b)
 {
-	float escalar = a.x * b.y + a.x * b.y;
-
-	return escalar;
+	return a.x * b.y + a.x * b.y;
 }
 
-float Vec2::angle(const Vec2& other) const 
+float Vec2::Angle(const Vec2& other) const 
 {
 	double fAng = atan2f(y - other.y, x - other.x) * (180 / PI);
 	if (fAng < 0) { fAng += 360.f; }
@@ -85,11 +83,11 @@ float Vec2::angle(const Vec2& other) const
 	return (float)fAng;
 }
 
-float Vec2::distance(const Vec2& other) const
+float Vec2::Distance(const Vec2& other) const
 {
 	Vec2 vector(x, y);
 	vector = vector - other;
-	float fDistance = vAbsoluto(vector);
+	float fDistance = AbsoluteVal(vector);
 
 	return fDistance;
 }
