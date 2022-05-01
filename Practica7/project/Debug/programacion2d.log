@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica7\lib\glfw3.h(98): message : see previous definition of 'APIENTRY'
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica7\src\main.cpp(100,77): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Soker\Documents\GitHub\Programacion2D\Practica7\src\main.cpp(100,38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  programacion2d.vcxproj -> C:\Users\Soker\Documents\GitHub\Programacion2D\Practica7\project\Debug\programacion2d.exe
